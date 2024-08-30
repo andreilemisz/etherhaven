@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    {% comment %} <link rel="stylesheet" href="style.css"> -> Sem CSS por enquanto {% endcomment %}
+    <title>{% block titulo_pagina %}Título da Página{% endblock titulo_pagina %}</title>
+</head>
+
+<body>
+    {% block conteudo %}
+
+        Este é o corpo da página
+
+    {% endblock conteudo %}
+</body>
+</html>
