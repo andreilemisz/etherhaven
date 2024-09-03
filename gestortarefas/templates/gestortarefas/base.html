@@ -1,15 +1,49 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-    {% comment %} <link rel="stylesheet" href="style.css"> -> Sem CSS por enquanto {% endcomment %}
-    <title>{% block titulo_pagina %}Título da Página{% endblock titulo_pagina %}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="static/gestortarefas/style.css">
 </head>
-
 <body>
-    {% block conteudo %}
 
-        Este é o corpo da página
+    <h1 class="titulo_pagina">
 
-    {% endblock conteudo %}
+        EtherHaven
+
+    </h1>
+
+    <p class="elementos_lista">
+        Insira suas informações para entrar
+
+        <style>
+            form {
+                width: 300px;
+                margin: 0 auto;
+            }
+    
+            label {
+                display: inline-block;
+                width: 100px;
+            }
+        </style>
+
+        <form class="elementos_lista">
+            <label for="username">Usuário:</label>
+            <input type="text" id="username" name="username" placeholder="Digite seu nome de usuário">
+                <br>
+            <label for="password">Senha:</label>
+            <input type="password" id="password" name="password" placeholder="Digite sua senha">
+            
+        </form>
+
+        </p>
+
+    <p class="botao_submeter"> 
+        <span type="submit" onclick="alert('Em manutenção!')" class="btn btn-one">
+            Entrar
+        </span>
+    </p>
+
 </body>
 </html>
