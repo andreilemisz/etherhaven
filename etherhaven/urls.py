@@ -17,10 +17,12 @@ Including another URLconf
 from django.contrib import admin # type: ignore
 from django.urls import path, include # type: ignore
 from paginalogin.views import autenticacao
+from telaprincipal.views import telamestre
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("autenticacaousuario/", autenticacao, name="autenticacao"),
+    path("telaprincipal/", telamestre, name="telamestre"),
+    path("autenticacao/", autenticacao, name="autenticacao"),
     path("", include("paginalogin.urls")),
     # path("autenticacaousuario/", autenticacao, name="autenticacao"),
 ]

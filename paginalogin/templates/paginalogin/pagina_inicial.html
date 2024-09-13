@@ -34,43 +34,11 @@
             <input type="text" id="nome_usuario" name="nome_usuario" placeholder="Digite seu nome de usuário">
                 <br>
             <label for="senha_usuario">Senha:</label>
-            <input type="senha_usuario" id="senha_usuario" name="senha_usuario" placeholder="Digite sua senha">
+            <input type="password" id="senha_usuario" name="senha_usuario" placeholder="Digite sua senha">
 
-
-    {% comment %} 
-                    ############################################################
-                            Não consigo fazer o botão submeter funcionar 
-                    ############################################################
-    {% endcomment %} 
-
-            <p class="botao_submeter">
-            {% comment %} <input type="submit" value="Login"> {% endcomment %}
-            <span role="button" class="btn btn-one">
-                    Entrar
-            </span>
-            </p>    
-
-            <script>
-                document.querySelector('.botao_submeter').addEventListener('click', function() {
-                    alert('Clicou em mim!');
-                });
-            </script>
-            
-        {% comment %} <p class="botao_submeter"> 
-            <span type="submit" onclick="alert('Em manutenção!')" class="btn btn-one">
-                Entrar
-            </span>
-        </p> {% endcomment %}
-
-        </form>
-
-        {% comment %} </p>
-
-    <p class="botao_submeter"> 
-        <span type="submit" onclick="alert('Em manutenção!')" class="btn btn-one">
-            Entrar
-        </span>
-    </p> {% endcomment %}
+            <p class="botao_submeter"> 
+                <input type="submit" value="Entrar">
+            </p>
 
 </body>
 </html>

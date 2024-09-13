@@ -1,4 +1,4 @@
-from django.shortcuts import render # type: ignore
+from django.shortcuts import render, redirect # type: ignore
 from django.contrib.auth import authenticate, login # type: ignore
 from django.http import HttpResponse # type: ignore
 
@@ -13,12 +13,18 @@ def autenticacao(request):
     if usuario is not None:
         login(request, usuario)
         # Redirect to a success page.
-        return HttpResponse("Login efetuado com sucesso!")
-        ...
+        
+        if request.user.is_superuser:
+            return HttpResponse("Você é um superuser!")
+
+##############################################################################
+############# É aqui que eu vou colocar para a tela principal #############
+        else:        
+            return redirect("../telaprincipal/")
+
+##############################################################################
     else:
         # Return an 'invalid login' error message.
         return HttpResponse("Login inválido")
-        ...
-
 
 # Create your views here.

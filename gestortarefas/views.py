@@ -1,11 +1,11 @@
-from django.shortcuts import render
-from django.views.generic import ListView
+from django.shortcuts import render # type: ignore
+from django.views.generic import ListView # type: ignore
 from gestortarefas.models import Tarefa
 
 
 class lista_todo_visualizacao(ListView):
     model = Tarefa
-    template_name = "gestortarefas/paginainicial.html"
+    template_name = "telaprincipal/telamestre.html"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
