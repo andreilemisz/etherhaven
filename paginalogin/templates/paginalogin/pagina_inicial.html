@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="static/paginalogin/style.css">
+</head>
+<body>
+
+    <h1 class="titulo_pagina">
+
+        EtherHaven
+
+    </h1>
+
+    <p class="elementos_lista">
+        Insira suas informações para entrar
+
+        <style>
+            form {
+                width: 300px;
+                margin: 0 auto;
+            }
+    
+            label {
+                display: inline-block;
+                width: 100px;
+            }
+        </style>
+
+        <form class="elementos_lista" method="POST" action="{% url 'autenticacao' %}">
+            {% csrf_token %}
+            <label for="nome_usuario">Usuário:</label>
+            <input type="text" id="nome_usuario" name="nome_usuario" placeholder="Digite seu nome de usuário">
+                <br>
+            <label for="senha_usuario">Senha:</label>
+            <input type="senha_usuario" id="senha_usuario" name="senha_usuario" placeholder="Digite sua senha">
+
+
+    {% comment %} 
+                    ############################################################
+                            Não consigo fazer o botão submeter funcionar 
+                    ############################################################
+    {% endcomment %} 
+
+            <p class="botao_submeter">
+            {% comment %} <input type="submit" value="Login"> {% endcomment %}
+            <span role="button" class="btn btn-one">
+                    Entrar
+            </span>
+            </p>    
+
+            <script>
+                document.querySelector('.botao_submeter').addEventListener('click', function() {
+                    alert('Clicou em mim!');
+                });
+            </script>
+            
+        {% comment %} <p class="botao_submeter"> 
+            <span type="submit" onclick="alert('Em manutenção!')" class="btn btn-one">
+                Entrar
+            </span>
+        </p> {% endcomment %}
+
+        </form>
+
+        {% comment %} </p>
+
+    <p class="botao_submeter"> 
+        <span type="submit" onclick="alert('Em manutenção!')" class="btn btn-one">
+            Entrar
+        </span>
+    </p> {% endcomment %}
+
+</body>
+</html>
