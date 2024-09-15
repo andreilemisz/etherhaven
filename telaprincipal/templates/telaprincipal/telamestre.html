@@ -1,21 +1,44 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="static/telaprincipal/style.css">
+    <link rel="stylesheet" type="text/css" href="../static/telaprincipal/style.css">
 </head>
 
 <body>
 
-    <h1>Lista de Tarefas</h1>
-        <ul>
-        {% for tarefa in tarefas %}
-            <li>{{ tarefa.nome_tarefa }}</li>
-        {% empty %}
-            <li>Sem tarefas no momento.</li>
-        {% endfor %}
-        </ul>
+    <t1> 
+            Tarefas
+    </t1>
+
+
+    <ul class="elementos_lista">
+    {% comment %} <div class="custom-checkbox"> {% endcomment %}
+    {% for tarefa in tarefas %}  
+        {% comment %} 
+        "Tarefa" é a classe que tem as informações (a models)
+        "Tarefas" é o nome da variável que contém os itens "Tarefa" que vão ser exibidos (com os filtros)
+
+        "Tarefa" ta no models.py e importado dentro da views.py
+        "Tarefas" ta no views.py como variável e dentro dele ta a importação da classe "Tarefa"
+        {% endcomment %}
+
+        <li>
+            <input type="checkbox" id="tarefa-{{ tarefa.id }} name=tarefa-{{ tarefa.id }}">
+            <label for="tarefa-{{ tarefa.id }}">{{ tarefa.nome_tarefa }}</label>
+        </li>           
+
+
+    {% empty %}
+        <li>Sem tarefas no momento.</li>
+    {% endfor %}
+
+    {% comment %} </div> {% endcomment %}
+
+    </ul>
 
 </body>
 </html>
